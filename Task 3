@@ -1,0 +1,15 @@
+import time
+
+def time_measure(func):
+    func_start = time.time()
+    func()
+    func_end = time.time()
+    measured_time = func_end - func_start
+    print("Execution time:{}".format(measured_time))
+
+@time_measure
+def hello():
+    i = 1
+    while i <= 100:
+        print("Hello, World #{}".format(i))
+        i += 1
